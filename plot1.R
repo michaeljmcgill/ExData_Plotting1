@@ -22,8 +22,6 @@ df <- read.csv.sql(txtfile, sep=";",
                    colClasses = c(rep("character",2), rep("numeric",7)),
                    sql = "select * from file where Date = '1/2/2007' or Date = '2/2/2007' ")
 
-df$Date <- dmy(df$Date)
-
 ## CREATE PLOT 1
 
 hist(df$Global_active_power, col = "red",
