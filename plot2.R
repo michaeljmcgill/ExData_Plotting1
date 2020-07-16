@@ -32,10 +32,6 @@ plot(df$DateTime, df$Global_active_power, type = "l",
 
 ## SAVE PLOT 2 TO PNG
 
-png("plot2.png", width = 480, height = 480)
-
-plot(df$DateTime, df$Global_active_power, type = "l",
-     xlab =  "",
-     ylab = "Global Active Power (kilowatts)")
+dev.copy(png, file="plot2.png", height=480, width=480)
 
 dev.off()

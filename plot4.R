@@ -51,29 +51,6 @@ plot(datetime, Global_reactive_power, type = "l")
 
 ## SAVE PLOT 4 TO PNG
 
-png("plot4.png", width = 480, height = 480)
-
-par(mfrow = c(2,2))
-
-with(df, {
-        
-        plot(datetime, Global_active_power, type = "l",
-             xlab = "",
-             ylab = "Global Active Power")
-        
-        plot(datetime, Voltage, type = "l")
-        
-        plot(datetime, Sub_metering_1, type = "l",
-             xlab =  "",
-             ylab = "Energy sub metering")
-        lines(datetime, Sub_metering_2, col = "red")
-        lines(datetime, Sub_metering_3, col = "blue")
-        legend("topright", lty = 1, bty = "n",
-               legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-               col = c("black", "red", "blue"))
-        
-        plot(datetime, Global_reactive_power, type = "l")
-        
-})
+dev.copy(png, file="plot3.png", height=480, width=480)
 
 dev.off()
